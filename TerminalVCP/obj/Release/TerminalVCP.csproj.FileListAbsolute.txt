@@ -1,0 +1,10 @@
+C:\Users\shumkin\Documents\GitHub\Education\TerminalVCP\TerminalVCP\bin\Release\TerminalVCP.exe.config
+C:\Users\shumkin\Documents\GitHub\Education\TerminalVCP\TerminalVCP\bin\Release\TerminalVCP.exe
+C:\Users\shumkin\Documents\GitHub\Education\TerminalVCP\TerminalVCP\bin\Release\TerminalVCP.pdb
+C:\Users\shumkin\Documents\GitHub\Education\TerminalVCP\TerminalVCP\obj\Release\TerminalVCP.csproj.AssemblyReference.cache
+C:\Users\shumkin\Documents\GitHub\Education\TerminalVCP\TerminalVCP\obj\Release\TerminalVCP.Form1.resources
+C:\Users\shumkin\Documents\GitHub\Education\TerminalVCP\TerminalVCP\obj\Release\TerminalVCP.Properties.Resources.resources
+C:\Users\shumkin\Documents\GitHub\Education\TerminalVCP\TerminalVCP\obj\Release\TerminalVCP.csproj.GenerateResource.cache
+C:\Users\shumkin\Documents\GitHub\Education\TerminalVCP\TerminalVCP\obj\Release\TerminalVCP.csproj.CoreCompileInputs.cache
+C:\Users\shumkin\Documents\GitHub\Education\TerminalVCP\TerminalVCP\obj\Release\TerminalVCP.exe
+C:\Users\shumkin\Documents\GitHub\Education\TerminalVCP\TerminalVCP\obj\Release\TerminalVCP.pdb

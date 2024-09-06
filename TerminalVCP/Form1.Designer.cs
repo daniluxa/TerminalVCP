@@ -32,9 +32,7 @@
             this.Btn_Refresh = new System.Windows.Forms.Button();
             this.Btn_Connect = new System.Windows.Forms.Button();
             this.Cmb_VCP = new System.Windows.Forms.ComboBox();
-            this.Tb_Amout_of_bytes = new System.Windows.Forms.TextBox();
             this.Rtb_output = new System.Windows.Forms.RichTextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.serialPort = new System.IO.Ports.SerialPort(this.components);
             this.Cmb_vcp_baud_rate = new System.Windows.Forms.ComboBox();
@@ -45,6 +43,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.Btn_Clear = new System.Windows.Forms.Button();
             this.Chb_add_log = new System.Windows.Forms.CheckBox();
+            this.Tb_log_file_name = new System.Windows.Forms.TextBox();
+            this.label_file_log_name = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // Btn_Refresh
@@ -75,14 +75,6 @@
             this.Cmb_VCP.Size = new System.Drawing.Size(65, 21);
             this.Cmb_VCP.TabIndex = 2;
             // 
-            // Tb_Amout_of_bytes
-            // 
-            this.Tb_Amout_of_bytes.Location = new System.Drawing.Point(389, 93);
-            this.Tb_Amout_of_bytes.Name = "Tb_Amout_of_bytes";
-            this.Tb_Amout_of_bytes.Size = new System.Drawing.Size(74, 20);
-            this.Tb_Amout_of_bytes.TabIndex = 3;
-            this.Tb_Amout_of_bytes.Text = "15";
-            // 
             // Rtb_output
             // 
             this.Rtb_output.Location = new System.Drawing.Point(12, 58);
@@ -90,16 +82,6 @@
             this.Rtb_output.Size = new System.Drawing.Size(355, 380);
             this.Rtb_output.TabIndex = 4;
             this.Rtb_output.Text = "";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(469, 90);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(70, 26);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Кол-во байт \r\nна строке";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // serialPort
             // 
@@ -199,7 +181,7 @@
             // Chb_add_log
             // 
             this.Chb_add_log.AutoSize = true;
-            this.Chb_add_log.Location = new System.Drawing.Point(389, 139);
+            this.Chb_add_log.Location = new System.Drawing.Point(389, 113);
             this.Chb_add_log.Name = "Chb_add_log";
             this.Chb_add_log.Size = new System.Drawing.Size(101, 17);
             this.Chb_add_log.TabIndex = 13;
@@ -207,11 +189,31 @@
             this.Chb_add_log.UseVisualStyleBackColor = true;
             this.Chb_add_log.CheckedChanged += new System.EventHandler(this.Chb_add_log_CheckedChanged);
             // 
+            // Tb_log_file_name
+            // 
+            this.Tb_log_file_name.Location = new System.Drawing.Point(389, 136);
+            this.Tb_log_file_name.Name = "Tb_log_file_name";
+            this.Tb_log_file_name.Size = new System.Drawing.Size(150, 20);
+            this.Tb_log_file_name.TabIndex = 14;
+            this.Tb_log_file_name.Visible = false;
+            // 
+            // label_file_log_name
+            // 
+            this.label_file_log_name.AutoSize = true;
+            this.label_file_log_name.Location = new System.Drawing.Point(410, 159);
+            this.label_file_log_name.Name = "label_file_log_name";
+            this.label_file_log_name.Size = new System.Drawing.Size(92, 13);
+            this.label_file_log_name.TabIndex = 15;
+            this.label_file_log_name.Text = "Название файла";
+            this.label_file_log_name.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(544, 450);
+            this.Controls.Add(this.label_file_log_name);
+            this.Controls.Add(this.Tb_log_file_name);
             this.Controls.Add(this.Chb_add_log);
             this.Controls.Add(this.Btn_Clear);
             this.Controls.Add(this.label4);
@@ -220,9 +222,7 @@
             this.Controls.Add(this.Cmb_vcp_parity);
             this.Controls.Add(this.Cmb_vcp_stop_bits);
             this.Controls.Add(this.Cmb_vcp_baud_rate);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.Rtb_output);
-            this.Controls.Add(this.Tb_Amout_of_bytes);
             this.Controls.Add(this.Cmb_VCP);
             this.Controls.Add(this.Btn_Connect);
             this.Controls.Add(this.Btn_Refresh);
@@ -239,9 +239,7 @@
         private System.Windows.Forms.Button Btn_Refresh;
         private System.Windows.Forms.Button Btn_Connect;
         private System.Windows.Forms.ComboBox Cmb_VCP;
-        private System.Windows.Forms.TextBox Tb_Amout_of_bytes;
         private System.Windows.Forms.RichTextBox Rtb_output;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.SaveFileDialog saveFileDialog;
         private System.IO.Ports.SerialPort serialPort;
         private System.Windows.Forms.ComboBox Cmb_vcp_baud_rate;
@@ -252,6 +250,8 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button Btn_Clear;
         private System.Windows.Forms.CheckBox Chb_add_log;
+        private System.Windows.Forms.TextBox Tb_log_file_name;
+        private System.Windows.Forms.Label label_file_log_name;
     }
 }
 

@@ -19,7 +19,6 @@ namespace TerminalVCP
     {
         bool isConnected = false;
         bool isWrite_in_file = false;
-        string file_name = "";
         public Form1()
         {
             InitializeComponent();
@@ -63,10 +62,16 @@ namespace TerminalVCP
                     {
                         MessageBox.Show("Поля настроек COM-порта не должны быть пустыми!");
                     }
-
-                    serialPort.PortName = selectedPort;
-                    serialPort.Open();
-                    Btn_Connect.Text = "Отключиться";
+                    try
+                    {
+                        serialPort.PortName = selectedPort;
+                        serialPort.Open();
+                        Btn_Connect.Text = "Отключиться";
+                    }
+                    catch(Exception ex)
+                    {  
+                        MessageBox.Show(ex.ToString()); 
+                    }
                 }
             }
             else
@@ -115,7 +120,30 @@ namespace TerminalVCP
             }
             if(isWrite_in_file)
             {
-
+                string file_name = @Tb_log_file_name.Text + ".txt";
+                if (!File.Exists(file_name)) // If file does not exists
+                {
+                    File.Create(file_name).Close(); // Create file
+                    using (StreamWriter sw = File.AppendText(file_name))
+                    {
+                        for (int i = 0; i < length; i++)
+                        {
+                            sw.Write(buf[i].ToString("X2") + " ");
+                        }
+                        sw.Write("\n");
+                    }
+                }
+                else
+                {
+                    using (StreamWriter sw = File.AppendText(file_name))
+                    {
+                        for (int i = 0; i < length; i++)
+                        {
+                            sw.Write(buf[i].ToString("X2") + " ");
+                        }
+                        sw.Write("\n");
+                    }
+                }
             }
         }
 
@@ -128,16 +156,19 @@ namespace TerminalVCP
         {
             if(Chb_add_log.CheckState == CheckState.Checked)
             {
-                SaveFileDialog SaveFileDialog1 = new SaveFileDialog();
-                SaveFileDialog1.ShowDialog();
+                //SaveFileDialog SaveFileDialog1 = new SaveFileDialog();
+                //SaveFileDialog1.ShowDialog();
+                Tb_log_file_name.Visible = true;
+                label_file_log_name.Visible = true;
                 isWrite_in_file = true;
             }
             else
             {
+                Tb_log_file_name.Visible = false;
+                label_file_log_name.Visible = false;
                 isWrite_in_file = false;
             }
         }
-
 
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
