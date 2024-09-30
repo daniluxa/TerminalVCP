@@ -106,9 +106,8 @@ namespace TerminalVCP
                     for (int i = 0; i < length; i++)
                     {
                         Rtb_output.AppendText(buf[i].ToString("X2") + " ");
-
                     }
-                    Rtb_output.AppendText("\n");
+                    //Rtb_output.AppendText("\n");
                 });
             }
             else
@@ -117,6 +116,7 @@ namespace TerminalVCP
                 {
                     Rtb_output.AppendText(buf[i].ToString("X2"));
                 }
+                Rtb_output.AppendText("\n");
             }
             if(isWrite_in_file)
             {
@@ -130,7 +130,7 @@ namespace TerminalVCP
                         {
                             sw.Write(buf[i].ToString("X2") + " ");
                         }
-                        sw.Write("\n");
+                        sw.Write(DateTime.Now + "\n");
                     }
                 }
                 else
@@ -141,7 +141,7 @@ namespace TerminalVCP
                         {
                             sw.Write(buf[i].ToString("X2") + " ");
                         }
-                        sw.Write("\n");
+                        sw.Write(DateTime.Now + "\n");
                     }
                 }
             }
@@ -173,6 +173,35 @@ namespace TerminalVCP
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
             if (serialPort.IsOpen) serialPort.Close();
+        }
+
+        private void Btn_Send_Click(object sender, EventArgs e)
+        {
+            ////string data = "AA 55 33 00 03 10 05 01 11 00 01 00 00 00 00\r\nAA 55 42 15 01 14 04 01 11 00 01 00 00 00 00\r\nAA 55 3D 11 02 10 04 01 11 00 01 00 00 00 00\r\nAA 55 44 11 02 10 04 01 11 00 00 00 00 00 00";
+            //byte[] buf1 = { 0xAA, 0x55 ,0x33 ,0x00 ,0x03 ,0x10 ,0x05 ,0x01 ,0x11 ,0x00 ,0x01 ,0x00 ,0x00 ,0x00 ,0x00};
+            //byte[] buf2 = { 0xAA, 0x55 ,0x44 ,0x11 ,0x02 ,0x10 ,0x04 ,0x01 ,0x11 ,0x00 ,0x00 ,0x00 ,0x00 ,0x00 ,0x00};
+            //byte[] buf3 = { 0xAA, 0x55 ,0x42 ,0x15 ,0x01 ,0x14 ,0x04 ,0x01 ,0x11 ,0x00 ,0x01 ,0x00 ,0x00 ,0x00 ,0x00};
+            //byte[] buf4 = { 0xAA, 0x55 ,0x3D ,0x11 ,0x02 ,0x10 ,0x04 ,0x01 ,0x11 ,0x00 ,0x01 ,0x00 ,0x00 ,0x00 ,0x00};
+            //while (true)
+            //{
+            //    try
+            //    {
+            //        serialPort.Write(buf1, 0, buf1.Length);
+            //        //System.Threading.Thread.Sleep(10);
+            //        serialPort.Write(buf2, 0, buf2.Length);
+            //        //System.Threading.Thread.Sleep(10);
+            //        serialPort.Write(buf3, 0, buf3.Length);
+            //        //System.Threading.Thread.Sleep(10);
+            //        serialPort.Write(buf4, 0, buf4.Length);
+            //        //System.Threading.Thread.Sleep(10);
+
+            //        //System.Threading.Thread.Sleep(1000);
+            //    }
+            //    catch (Exception ex)
+            //    {
+            //        MessageBox.Show(ex.ToString());
+            //    }
+            //}
         }
     }
 }

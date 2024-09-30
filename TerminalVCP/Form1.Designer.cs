@@ -45,6 +45,7 @@
             this.Chb_add_log = new System.Windows.Forms.CheckBox();
             this.Tb_log_file_name = new System.Windows.Forms.TextBox();
             this.label_file_log_name = new System.Windows.Forms.Label();
+            this.Btn_Send = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Btn_Refresh
@@ -207,11 +208,22 @@
             this.label_file_log_name.Text = "Название файла";
             this.label_file_log_name.Visible = false;
             // 
+            // Btn_Send
+            // 
+            this.Btn_Send.Location = new System.Drawing.Point(413, 204);
+            this.Btn_Send.Name = "Btn_Send";
+            this.Btn_Send.Size = new System.Drawing.Size(75, 23);
+            this.Btn_Send.TabIndex = 16;
+            this.Btn_Send.Text = "Отправить";
+            this.Btn_Send.UseVisualStyleBackColor = true;
+            this.Btn_Send.Click += new System.EventHandler(this.Btn_Send_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(544, 450);
+            this.Controls.Add(this.Btn_Send);
             this.Controls.Add(this.label_file_log_name);
             this.Controls.Add(this.Tb_log_file_name);
             this.Controls.Add(this.Chb_add_log);
@@ -252,6 +264,7 @@
         private System.Windows.Forms.CheckBox Chb_add_log;
         private System.Windows.Forms.TextBox Tb_log_file_name;
         private System.Windows.Forms.Label label_file_log_name;
+        private System.Windows.Forms.Button Btn_Send;
     }
 }
 
